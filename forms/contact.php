@@ -1,35 +1,86 @@
 <?php
-  
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'contact@example.com';
+    // Database configuration
+    $servername = "localhost";
+    $username = "root";
+    $password = ""; 
+    $dbname = "photography";
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+        // Check connection
+    if ($conn->connect_error) {
+           
+            die("Connection failed: " . $conn->connect_error);
+         
+    } 
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+    // Get form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $mobile = $_POST['mobile'];
+    $date = $_POST['date'];
+    $location = $_POST['location'];
+    $event_type = $_POST['event_type'];
+    $additional_details = $_POST['additional_details'];
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+    // Validate date and event type fields
+    if (empty($date) || $event_type == "Select Event Type") {
+        echo "Error: Date and event type must be selected.";
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+            
+        // Use SweetAlert instead of regular alert
+        echo "<script type='text/javascript'> 
+        
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Failed!',
+                    text: 'Date and event type must be selected.',
+                    confirmButtonText: 'OK'
+                }).then(() => {
+                    window.history.back();  // Go back to the previous page
+                });
+              </script>";
+        return;
 
-  echo $contact->send();
+        }else{
+            
+    $stmt ="INSERT INTO `contact_messages`(`name`, `email`, `mobile`, `date`, `location`, `event_type`, `additional_details`) VALUES ('$name','$email','$mobile','$date','$location','$event_type','$additional_details')";
+    
+    // Execute the statement
+    if ($conn->query($stmt) == true) {
+        echo "Record added successfully"; // Debug message
+
+        // Include SweetAlert library
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+        
+        // Use SweetAlert instead of regular alert
+        echo "<script type='text/javascript'>
+    
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Record added successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        console.log('Redirecting...'); // Debug message
+                        window.location.href = './../contact.html';  // Redirect to another page
+                    }
+                    else{
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Something went wrong!',
+                        })
+                    }
+                    
+                });
+              </script>";
+    } else {
+        echo "Error: " . $stmt . "<br>" . $conn->error;
+    }
+
+}
+    $conn->close();
 ?>

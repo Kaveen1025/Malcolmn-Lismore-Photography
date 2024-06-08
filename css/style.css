@@ -795,14 +795,20 @@ section {
   bottom: 20px;
 }
 
-.portfolioAll .works{
-  text-align: center;
+
+.portfolioAll .myportfolio{
+  text-align: center; 
+  margin-top: -10px;
   margin-bottom: 40px;
+
 }
 
-.portfolioAll .works strong{
-  color: #E4A740;
+.portfolioAll .myportfolio strong{
+  color:#E4A740
 }
+
+
+
 
 /*--------------------------------------------------------------
 # Client Stories

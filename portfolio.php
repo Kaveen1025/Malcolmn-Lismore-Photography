@@ -1,78 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Gallery - Malcolmn Lismore Photography</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
-
-    <!-- Favicons -->
-    <link href="./assets/img/log.png" rel="icon" />
-
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Muli:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      rel="stylesheet"
-    />
-
-    <!-- CSS Files -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-
-    <!-- Main CSS File -->
-    <link href="./css/style.css" rel="stylesheet" />
-  </head>
-
-  <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="d-flex align-items-center">
-      <div class="container d-flex justify-content-between">
-        <div class="logo">
-          <a href="./index.html"
-            ><img src="./assets/img/Mal.png" alt="" class="img-fluid"
-          /></a>
-        </div>
-
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./about.html">About Me</a></li>
-            <li><a href="./services.html">Services</a></li>
-            <li><a href="./pricing.html">Pricing</a></li>
-            <li><a class="active" href="./portfolio.html">Portfolio</a></li>
-
-            <li><a href="./contact.html">Contact</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-      </div>
-    </header>
-    <!-- End Header -->
+<!-- ======= Header ======= -->
+<?php
+$page_title = "Portfolio";
+$current_page = "portfolio";
+include 'header.php';
+?>
+<!-- End Header -->
 
     <main id="main">
       <!-- ======= Portfolio Section ======= -->
       <section id="portfolio" class="portfolioAll">
+      <h2 class="myportfolio">My <strong>Portfolio</strong></h2>
         <div class="container">
           <div class="row" data-aos="fade-up">
             <div class="col-lg-12 d-flex justify-content-center">
@@ -1302,121 +1240,7 @@
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 footer-contact">
-              <h3>Malcolm Lismore Photography</h3>
-              <p>
-                23 Rose Street <br />Edinburgh <br />
-                Scotland, EH2 2QA <br />
-                <strong>Phone:</strong> +131 555 1234 / +141 678 5678<br />
-                <strong>Email:</strong> info@malcolmnlismore.com<br />
-              </p>
-            </div>
+<?php
+include 'footer.php';
+?>
 
-            <div class="col-lg-2 col-md-6 footer-links">
-              <h4>Navigation Links</h4>
-              <ul>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="./index.html">Home</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="./about.html">About Me</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="./services.html">Services</a>
-                </li>
-
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="./pricing.html">Pricing</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="./portfolio.html">Portfolio</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="./contact.html">Contact</a>
-                </li>
-              </ul>
-            </div>
-
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Our Services</h4>
-              <ul>
-                <li>
-                  <i class="bx bx-chevron-right"></i> Landscape Photography
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i> Wildlife Photography
-                </li>
-                <li><i class="bx bx-chevron-right"></i> Bird Photography</li>
-                <li><i class="bx bx-chevron-right"></i> Wedding Photography</li>
-                <li><i class="bx bx-chevron-right"></i>Portrait Photography</li>
-                <li><i class="bx bx-chevron-right"></i>Event Photography</li>
-              </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-6 footer-newsletter">
-              <h4>Join Our Newsletter</h4>
-              <p>
-                Stay updated with our latest photography projects, exclusive
-                offers, and tips for capturing stunning images. Subscribe now
-                and never miss an update!
-              </p>
-              <form action="" method="post">
-                <input type="email" name="email" placeholder="Email" />
-                <input type="submit" value="Subscribe" />
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container d-md-flex py-4">
-        <div class="me-md-auto text-center text-md-start">
-          <div class="copyright">
-            &copy; Copyright
-            <strong><span>Malcolm Lismore Photography</span></strong
-            >. All Rights Reserved
-          </div>
-        </div>
-        <div class="social-links text-center text-md-right pt-3 pt-md-0">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
-    </footer>
-    <!-- End Footer -->
-
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
-
-    <!-- JS Files -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Main JS File -->
-    <script src="./js/main.js"></script>
-  </body>
-</html>

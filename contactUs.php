@@ -135,7 +135,7 @@ include 'header.php';
                   ></textarea>
                 </div>
                 <div class="text-center">
-                  <button type="submit" onsubmit="return validateForm()">
+                  <button type="submit" style="margin-top:30px">
                     Send Message
                   </button>
                 </div>

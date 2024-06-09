@@ -65,7 +65,7 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         console.log('Redirecting...'); // Debug message
-                        window.location.href = './../contact.html';  // Redirect to another page
+                        window.location.href = './../contactUs.php';  // Redirect to another page
                     }
                     else{
                         Swal.fire({

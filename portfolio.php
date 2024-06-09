@@ -8,12 +8,10 @@ include 'header.php';
 
 <?php
 
-include 'forms/getAllImages.php';
+include 'forms/dbConnection.php';
 
 $sql = "SELECT * FROM gallery_images";
 $all_images = $conn->query($sql);
-
-
 ?>
 
 <!-- End Header -->
@@ -154,13 +152,24 @@ $all_images = $conn->query($sql);
               <div class="portfolio-info">
                 <h4><?php echo $row["image_name"];  ?></h4>
                 <p><?php echo $row["image_category"];  ?></p>
+                
                 <a
                   href="./<?php echo ltrim($row["product_image"], "./"); ?>"
                   data-gallery="portfolioGallery"
                   class="portfolio-lightbox preview-link"
-                  title="Landscape 1"
+                  title="Preview"
                   ><i class="bx bx-plus"></i
                 ></a>
+                
+                
+                <form action="./forms/deleteImage.php" method="POST" style="display:inline;">
+      <input type="hidden" name="image_id" value="<?php echo $row['id']; ?>">
+      <input type="hidden" name="image_path" value="<?php echo ltrim($row['product_image'], './'); ?>">
+    
+      <button type="submit" class="details-link" title="Delete" >
+        <i class="bi bi-trash"></i>
+      </button>
+    </form>
               </div>
             </div>
 
